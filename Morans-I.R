@@ -16,13 +16,13 @@ for(rowValue in rowValues){
   for(colValue in colValues){
     ## 设置每一个多边形的数值
     seatNum <- (rowValue-1)*14+colValue
-
+    
     ## draw island
     ## 通过polygons函数来画出island
     Sr = Polygon(cbind(c(rowValue,rowValue,rowValue+1,rowValue+1,rowValue),c(colValue,colValue+1,colValue+1,colValue,colValue)))
     ## 给每一个island标上对应的id
     Srs = Polygons(list(Sr),seatNum)
-
+    
     tepList<-c(tepList,Srs)
   }
 }
@@ -66,7 +66,12 @@ spoint<-data.frame( cbind(ptss[,1],ptss[,2]) )
 sptest <- SpatialPoints(spoint)
 plot(sptest)
 
-nbk1 <- knn2nb(knearneigh(sptest, k = 3, longlat = TRUE))
-snbk1 <- make.sym.nb(nbk1)
-plot(nb2listw(snbk1), cbind(spoint$X1 , spoint$X2))
-moran.test(goodgrade, nb2listw(snbk1))
+#nbk1 <- knn2nb(knearneigh(sptest, k = 3, longlat = TRUE))
+#snbk1 <- make.sym.nb(nbk1)
+#plot(nb2listw(snbk1), cbind(spoint$X1 , spoint$X2))
+#moran.test(goodgrade, nb2listw(snbk1))
+
+neib=dnearneigh(ptss,0,2.5)
+snbk1 <- make.sym.nb(neib)
+plot(nb2listw(neib), cbind(spoint$X1 , spoint$X2))
+moran.test(goodgrade, nb2listw(neib))
