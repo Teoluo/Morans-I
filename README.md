@@ -16,11 +16,11 @@ Moran's I = 0，空间呈随机性。
 **dnearneigh** ：是通过最近距离和最远距离来选取相应的邻居</br>
 我们选取dnearneigh来选取邻居，再使用计算莫兰指数的代码
 
-![img](https://github.com/cuit201608/Team1_coding/blob/master/2nd/screenshots/code.png)
+![img](https://github.com/Teoluo/Morans-I/blob/master/screenshots/code.png)
 
 ## 结果
-![img](https://github.com/cuit201608/Team1_coding/blob/master/2nd/screenshots/1.png)
-![img](https://github.com/cuit201608/Team1_coding/blob/master/2nd/screenshots/moran.png)
+![img](https://github.com/Teoluo/Morans-I/blob/master/screenshots/1.png)
+![img](https://github.com/Teoluo/Morans-I/blob/master/screenshots/moran.png)
 
 ## 结论
 计算出来的莫兰指数为**0.04463434**，数据大于零，其值极其接近于零，我们认为它具有**随机性**，但有一丝的空间正相关，可能会存在一少部分相关的几率。
